@@ -4,9 +4,11 @@
   "description": "Backend for FuelEU-Maritime (Express + TypeScript + PostgreSQL)",
   "main": "build/index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/infrastructure/server/index.ts",
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "prisma:migrate": "npx prisma migrate dev --name init",
+    "prisma:seed": "node -r ts-node/register prisma/seed.ts"
   },
   "author": "",
   "license": "MIT",
@@ -14,15 +16,19 @@
     "@prisma/client": "^6.19.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.18.2",
-    "pg": "^8.16.3"
+    "express": "^4.21.2",
+    "pg": "^8.16.3",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.17",
-    "@types/node": "^20.5.1",
+    "@types/express": "^4.17.25",
+    "@types/node": "^20.19.24",
     "prisma": "^6.19.0",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.6.2"
+    "typescript": "^5.9.3"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
