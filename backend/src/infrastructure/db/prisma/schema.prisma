@@ -33,6 +33,8 @@ model BankEntry {
   ship_id       String
   year          Int
   amount_gco2eq Float
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
 }
 
 model Pool {
