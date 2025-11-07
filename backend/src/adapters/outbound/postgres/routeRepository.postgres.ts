@@ -10,8 +10,8 @@ export const RouteRepositoryPostgres: RouteRepository = {
     return prisma.route.findMany({ where, orderBy: { id: 'asc' } });
   },
 
-  async findById(id) {
-    return prisma.route.findUnique({ where: { id } });
+  async findById(route_id) {
+    return prisma.route.findUnique({ where: { route_id } });
   },
 
   async findBaselineByYear(year) {
