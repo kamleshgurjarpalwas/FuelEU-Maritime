@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-
+import routesRouter from '../../adapters/inbound/http/routesRouter';
 dotenv.config();
 
 const app = express();
@@ -11,6 +11,10 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({ status: "ok" });
 });
+
+
+app.use('/api', routesRouter);
+
 
 const port = process.env.PORT ? Number(process.env.PORT) : 4000;
 
