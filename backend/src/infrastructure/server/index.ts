@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import routesRouter from '../../adapters/inbound/http/routesRouter';
 import complianceRouter from '../../adapters/inbound/http/complianceRouter';
 import bankingRouter from '../../adapters/inbound/http/bankingRouter';
+import poolsRouter from '../../adapters/inbound/http/poolsRouter';
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 app.use('/api', routesRouter);
 app.use('/api', complianceRouter);
 app.use('/api', bankingRouter);
+app.use('/api', poolsRouter);
 
 const port = process.env.PORT ? Number(process.env.PORT) : 4000;
 
