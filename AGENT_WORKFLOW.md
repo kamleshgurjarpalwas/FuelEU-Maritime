@@ -4,9 +4,8 @@
 Copilot, Cursor, ChatGPT, DeepSeek
 
 ## Prompts & Outputs
-- Example 1: Use GPT for basic initial command to setup a express app in typescript, after executing these command successfully setup backend.
-    
-
+- 1: Use GPT for basic initial command to setup a express app in typescript, after executing these command successfully setup backend.
+- 2: Prompt:Create necessary folder in backend like domain,application,ports. Output:Created successfully according to given context.
 ## Validation / Corrections
 Describe how you verified and modified the agent output.
 
