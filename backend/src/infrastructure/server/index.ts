@@ -1,26 +1,29 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import routesRouter from '../../adapters/inbound/http/routesRouter';
-import complianceRouter from '../../adapters/inbound/http/complianceRouter';
-import bankingRouter from '../../adapters/inbound/http/bankingRouter';
-import poolsRouter from '../../adapters/inbound/http/poolsRouter';
+import routesRouter from "../../adapters/inbound/http/routesRouter";
+import complianceRouter from "../../adapters/inbound/http/complianceRouter";
+import bankingRouter from "../../adapters/inbound/http/bankingRouter";
+import poolsRouter from "../../adapters/inbound/http/poolsRouter";
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:5174"],
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({ status: "ok" });
 });
 
-
-app.use('/api', routesRouter);
-app.use('/api', complianceRouter);
-app.use('/api', bankingRouter);
-app.use('/api', poolsRouter);
+app.use("/api", routesRouter);
+app.use("/api", complianceRouter);
+app.use("/api", bankingRouter);
+app.use("/api", poolsRouter);
 
 const port = process.env.PORT ? Number(process.env.PORT) : 4000;
 

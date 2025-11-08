@@ -24,6 +24,7 @@ export default function PoolingTab() {
       setLoading(true);
       const res: any = await api.createPool(year, members);
       setResult(res.members ?? []);
+      console.log("Pool result is : ",res)
       alert("Pool created");
     } catch (err: any) {
       alert(err.message || "Failed to create pool");
@@ -36,8 +37,8 @@ export default function PoolingTab() {
   const rows = result.length ? result.map((r: any) => (
     <tr key={r.ship_id} className="border-b hover:bg-surface">
       <td className="p-2">{r.ship_id}</td>
-      <td className="p-2">{r.cb_before}</td>
-      <td className="p-2">{r.cb_after}</td>
+      <td className="p-2">{r.cb_after_g}</td>
+      <td className="p-2">{r.cb_after_g}</td>
     </tr>
   )) : [<tr key="none"><td colSpan={3} className="p-4 text-sm text-gray-500">No pool created yet.</td></tr>];
 
