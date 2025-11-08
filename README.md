@@ -1,6 +1,7 @@
 # FuelEU Maritime Application
 
 A full-stack application for managing maritime fuel efficiency and compliance with FuelEU regulations.
+<img width="1893" height="737" alt="image" src="https://github.com/user-attachments/assets/f884a335-6464-480e-8ccc-3a14986b9c97" />
 
 ## Prerequisites
 
